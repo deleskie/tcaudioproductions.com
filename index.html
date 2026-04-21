@@ -247,6 +247,8 @@
     align-items: flex-end;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease;
   }
 
   .hero-card::before {
@@ -260,6 +262,11 @@
   .hero-card strong {
     position: relative;
     z-index: 1;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--stroke-strong);
   }
 
   .hero-card span {
@@ -385,6 +392,21 @@
   }
 
   .article-card a {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .gallery-card {
+    display: block;
+    text-decoration: none;
+  }
+
+  .gallery-card .card-link {
     display: inline-flex;
     align-items: center;
     margin-top: 16px;
@@ -713,6 +735,12 @@
     font-size: 0.82rem;
   }
 
+  .section-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
   @media (max-width: 960px) {
     .hero-inner,
     .gallery-grid,
@@ -775,7 +803,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
           <li><a href="#articles">Articles</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -797,24 +825,24 @@
         </div>
 
         <div class="hero-rail" aria-label="Featured service visuals">
-          <article class="hero-card one">
+          <a class="hero-card one" href="/gallery/#reception-ready-setup">
             <div>
               <span>Professional DJ Setup</span>
               <strong>Clean presentation, dependable gear, and a setup that looks sharp in the room.</strong>
             </div>
-          </article>
-          <article class="hero-card two">
+          </a>
+          <a class="hero-card two" href="/gallery/#lighting-atmosphere">
             <div>
               <span>Lighting & Atmosphere</span>
               <strong>Custom lighting and event energy that help turn a standard space into a real party.</strong>
             </div>
-          </article>
-          <article class="hero-card three">
+          </a>
+          <a class="hero-card three" href="/gallery/#private-event-setup">
             <div>
               <span>Events That Move</span>
               <strong>Music, lighting, and pacing built to keep guests engaged from the first song to the last.</strong>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </header>
@@ -931,8 +959,9 @@
       <div class="section-inner">
         <p class="section-label">Event Gallery</p>
         <h2 class="section-title">Professional Setups. Strong Lighting. Real Event Atmosphere.</h2>
+        <p class="section-copy">Explore featured setups, venue-specific notes, and real local context for weddings, community functions, and private events across Cape Breton. The gallery now links through to dedicated venue pages instead of stopping at a static homepage preview.</p>
         <div class="gallery-grid">
-          <article class="gallery-card">
+          <a class="gallery-card" href="/venues/keltic-lodge-weddings.html">
             <div class="gallery-photo has-image image-one">
               <div>
                 <strong>Wedding Reception</strong>
@@ -941,8 +970,9 @@
             </div>
             <h3>Reception-Ready Setup</h3>
             <p>Professional gear, thoughtful layout, and a presentation style that fits elegant wedding and banquet spaces.</p>
-          </article>
-          <article class="gallery-card">
+            <span class="card-link">View Keltic Lodge page →</span>
+          </a>
+          <a class="gallery-card" href="/venues/centre-200-events.html">
             <div class="gallery-photo has-image image-two">
               <div>
                 <strong>Lighting Design</strong>
@@ -951,8 +981,9 @@
             </div>
             <h3>Lighting That Changes The Room</h3>
             <p>From subtle ambiance to high-energy effects, the lighting package adds depth, motion, and a stronger event experience.</p>
-          </article>
-          <article class="gallery-card">
+            <span class="card-link">View Centre 200 page →</span>
+          </a>
+          <a class="gallery-card" href="/venues/inverary-inn-events.html">
             <div class="gallery-photo has-image image-three">
               <div>
                 <strong>Private Events</strong>
@@ -961,7 +992,11 @@
             </div>
             <h3>Setup Flexibility For Any Crowd</h3>
             <p>Whether the night calls for polished announcements, dance-floor energy, or a more laid-back mix, the setup is built around the event.</p>
-          </article>
+            <span class="card-link">View Inverary Inn page →</span>
+          </a>
+        </div>
+        <div class="section-actions">
+          <a class="button button-primary" href="/gallery/">Browse Full Gallery</a>
         </div>
       </div>
     </section>
