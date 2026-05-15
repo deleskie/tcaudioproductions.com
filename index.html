@@ -37,6 +37,9 @@
     --stroke-strong: rgba(200, 160, 80, 0.34);
     --gold: #c8a050;
     --gold-bright: #e0b860;
+    --uv-cyan: #32f5ff;
+    --uv-pink: #ff4fd8;
+    --uv-lime: #b7ff3c;
     --text: #f5f0e8;
     --muted: rgba(245, 240, 232, 0.72);
     --muted-soft: rgba(245, 240, 232, 0.52);
@@ -515,6 +518,118 @@
     font-size: 0.98rem;
   }
 
+  .blacklight-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 38px;
+    align-items: center;
+    margin-top: 56px;
+  }
+
+  .blacklight-copy {
+    padding: 38px 34px;
+    border: 1px solid rgba(50, 245, 255, 0.22);
+    background:
+      linear-gradient(145deg, rgba(50, 245, 255, 0.08), rgba(255, 79, 216, 0.08)),
+      rgba(255, 255, 255, 0.035);
+    box-shadow: var(--shadow);
+  }
+
+  .blacklight-copy h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .blacklight-copy p {
+    color: var(--muted);
+    line-height: 1.85;
+    font-size: 0.98rem;
+  }
+
+  .blacklight-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin: 24px 0 28px;
+  }
+
+  .blacklight-list li {
+    color: var(--text);
+    line-height: 1.6;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .blacklight-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    background: var(--uv-cyan);
+    box-shadow: 0 0 18px rgba(50, 245, 255, 0.8);
+  }
+
+  .blacklight-note {
+    margin-top: 16px;
+    color: var(--muted-soft);
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  .blacklight-gallery {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 16px;
+  }
+
+  .blacklight-photo {
+    position: relative;
+    min-height: 220px;
+    overflow: hidden;
+    border: 1px solid rgba(50, 245, 255, 0.2);
+    background: #050505;
+    box-shadow: var(--shadow);
+  }
+
+  .blacklight-photo.large {
+    min-height: 520px;
+  }
+
+  .blacklight-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+  }
+
+  .blacklight-stack {
+    display: grid;
+    gap: 16px;
+  }
+
+  .blacklight-tag {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1;
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    padding: 0 12px;
+    background: rgba(5, 5, 5, 0.76);
+    border: 1px solid rgba(183, 255, 60, 0.36);
+    color: var(--uv-lime);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+
   .gallery-photo {
     aspect-ratio: 4 / 5;
     margin-bottom: 20px;
@@ -744,7 +859,9 @@
   @media (max-width: 960px) {
     .hero-inner,
     .gallery-grid,
-    .media-feature {
+    .media-feature,
+    .blacklight-feature,
+    .blacklight-gallery {
       grid-template-columns: 1fr;
     }
 
@@ -783,6 +900,10 @@
       grid-template-columns: 1fr;
     }
 
+    .blacklight-photo.large {
+      min-height: 360px;
+    }
+
     .section {
       padding: 80px 20px;
     }
@@ -803,6 +924,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#blacklight">Blacklight</a></li>
           <li><a href="/gallery/">Gallery</a></li>
           <li><a href="#articles">Articles</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -892,6 +1014,46 @@
             <h3>Custom Music Planning</h3>
             <p>Thoughtful music preparation built around your event timeline, preferred style, must-play selections, and the audience in the room.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="blacklight">
+      <div class="section-inner">
+        <p class="section-label">Party Upgrade</p>
+        <h2 class="section-title">Blacklight Add-Ons For Parties, Proms, And Glow Events</h2>
+        <p class="section-copy">Add a UV blacklight package when the event calls for a brighter dance floor, stronger photos, and a party look guests will remember.</p>
+        <div class="blacklight-feature">
+          <div class="blacklight-copy">
+            <span class="media-kicker">Optional Lighting Package</span>
+            <h3>Turn the room into a glow party without overcomplicating the setup.</h3>
+            <p>Blacklight works especially well for proms, teen dances, birthdays, fundraisers, Halloween parties, holiday events, and private celebrations that want a more visual experience.</p>
+            <ul class="blacklight-list">
+              <li>UV lighting for neon clothing, glow paint, signs, and party decor.</li>
+              <li>Clean integration with DJ sound, dance lighting, and event pacing.</li>
+              <li>Easy add-on for venues that want a bigger look without a full production build.</li>
+            </ul>
+            <a class="button button-primary" href="#contact">Ask About Blacklight</a>
+            <p class="blacklight-note">Availability depends on venue layout, power access, room size, and the event schedule.</p>
+          </div>
+          <div class="blacklight-gallery" aria-label="Blacklight party visuals">
+            <div class="blacklight-photo large">
+              <img src="./assets/blacklight/01_blacklight_party_model_hero.jpg" alt="Blacklight party atmosphere with UV face paint and dance floor lighting">
+              <span class="blacklight-tag">Glow Party Look</span>
+            </div>
+            <div class="blacklight-stack">
+              <div class="blacklight-photo">
+                <img src="./assets/blacklight/02_uv_facepaint_duo_hero.jpg" alt="UV face paint glowing under blacklight">
+                <span class="blacklight-tag">UV Details</span>
+              </div>
+              <div class="blacklight-photo">
+                <img src="./assets/blacklight/03_neon_blacklight_pattern_hero.jpg" alt="Neon blacklight party pattern and decor elements">
+                <span class="blacklight-tag">Neon Decor</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
