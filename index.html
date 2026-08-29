@@ -518,6 +518,93 @@
     font-size: 0.98rem;
   }
 
+  .wedding-effects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .wedding-effect-card {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+    border: 1px solid var(--stroke);
+    background: #111;
+    box-shadow: var(--shadow);
+  }
+
+  .wedding-effect-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    display: block;
+    object-fit: cover;
+    transition: transform 500ms ease;
+  }
+
+  .wedding-effect-card:hover img {
+    transform: scale(1.025);
+  }
+
+  .wedding-effect-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.08) 68%);
+    pointer-events: none;
+  }
+
+  .wedding-effect-copy {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 34px 30px;
+  }
+
+  .wedding-effect-copy span {
+    display: block;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .wedding-effect-copy h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .wedding-effect-copy p {
+    max-width: 52ch;
+    color: rgba(244, 240, 232, 0.82);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .wedding-effects-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 34px;
+    text-align: center;
+  }
+
+  .wedding-effects-note {
+    max-width: 700px;
+    color: var(--muted-soft);
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
   .blacklight-feature {
     display: grid;
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -860,6 +947,7 @@
     .hero-inner,
     .gallery-grid,
     .media-feature,
+    .wedding-effects-grid,
     .blacklight-feature,
     .blacklight-gallery {
       grid-template-columns: 1fr;
@@ -902,6 +990,15 @@
 
     .blacklight-photo.large {
       min-height: 360px;
+    }
+
+    .wedding-effect-card,
+    .wedding-effect-card img {
+      min-height: 430px;
+    }
+
+    .wedding-effect-copy {
+      padding: 28px 24px;
     }
 
     .section {
@@ -1014,6 +1111,41 @@
             <h3>Custom Music Planning</h3>
             <p>Thoughtful music preparation built around your event timeline, preferred style, must-play selections, and the audience in the room.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="wedding-effects">
+      <div class="section-inner">
+        <p class="section-label">Wedding Enhancements</p>
+        <h2 class="section-title">Book A Moment They&rsquo;ll Remember</h2>
+        <p class="section-copy">Turn a first dance or grand entrance into a photo-ready moment with low-lying fog or a professionally planned cold-spark display.</p>
+
+        <div class="wedding-effects-grid">
+          <article class="wedding-effect-card">
+            <img src="./assets/wedding-effects/low-lying-fog-first-dance.jpg" alt="Newlyweds dancing together above a layer of low-lying fog" width="933" height="835" loading="lazy">
+            <div class="wedding-effect-copy">
+              <span>Dance On The Clouds</span>
+              <h3>Low-Lying Fog</h3>
+              <p>Create a soft, cloud-like first dance that stays close to the floor and keeps the couple at the centre of every photo.</p>
+            </div>
+          </article>
+
+          <article class="wedding-effect-card">
+            <img src="./assets/wedding-effects/cold-spark-wedding-entrance.jpg" alt="Newlyweds sharing a first dance surrounded by cold-spark effects" width="713" height="698" loading="lazy">
+            <div class="wedding-effect-copy">
+              <span>Make An Entrance</span>
+              <h3>Cold-Spark Moments</h3>
+              <p>Add a bright, dramatic frame to a grand entrance, first dance, or celebration moment your guests will be ready to capture.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="wedding-effects-cta">
+          <a class="button button-primary" href="#contact">Book Your Wedding Effects</a>
+          <p class="wedding-effects-note">Effects are subject to venue approval, room conditions, placement, and event scheduling. Availability must be confirmed in advance.</p>
         </div>
       </div>
     </section>
